@@ -80,5 +80,5 @@ kubectl exec -ti vault-0 -- /bin/sh
 vault login # It will prompt for your token obtained from the cluster-key.json file
 ```
 ## Official Documentation
- For more details and advanced configurations, refer to the [Official HashiCorp Vault Documentation](https://developer.hashicorp.com/vault/docs)
+ For more details and advanced configurations, refer to the [Official HashiCorp Vault Documentation]([https://developer.hashicorp.com/vault/docs](https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-minikube-raft)https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-minikube-raft)
 
