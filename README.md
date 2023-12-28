@@ -6,7 +6,7 @@
 # Installing jq for JSON data manipulation
 sudo apt-get install jq
 ```
-# Namespace Creation
+## Namespace Creation
 ```bash
 # Creating the 'vault' namespace to organize resources
 bashkubectl create namespace vault
@@ -14,8 +14,7 @@ bashkubectl create namespace vault
 # Switching to the created namespace
 bashkubectl config set-context --current --namespace=vault
 ```
-# Helm Configuration
-
+## Helm Configuration
 ```bash
 # Adding the HashiCorp Helm repository
 helm repo add hashicorp https://helm.releases.hashicorp.com
@@ -24,8 +23,8 @@ helm search repo hashicorp/vault
 # Displaying available versions of the HashiCorp Vault chart
 helm search repo hashicorp/vault --versions
 ```
-# Helm Values File Creation
-## Create the file helm-vault-raft-values.yml with the following content:
+## Helm Values File Creation
+Create the file helm-vault-raft-values.yml with the following content:
 ```yaml
 # Custom configuration for Vault deployment using Helm
 # Filename helm-vault-raft-values.yml
@@ -45,7 +44,7 @@ server:
 # Installing Vault with Helm using custom values
 helm install vault hashicorp/vault --values helm-vault-raft-values.yml -n vault
 ```
-# Initialization and Unsealing of Vault
+## Initialization and Unsealing of Vault
 ```bash
 # Initializing Vault and obtaining keys for unsealing
 kubectl exec vault-0 -- vault operator init \
@@ -74,13 +73,12 @@ kubectl exec vault-2 -- vault operator unseal $VAULT_UNSEAL_KEY
 # Port forwarding to access Vault locally
 kubectl port-forward vault-0 8200:8200
 ```
-# Access to Vault
+## Access to Vault
 ```bash
 # Accessing Vault from within the container vault-0
 kubectl exec -ti vault-0 -- /bin/sh
 vault login # It will prompt for your token obtained from the cluster-key.json file
 ```
-# Link to Official Documentation
-
-[Official HashiCorp Vault Documentation(https://developer.hashicorp.com/vault/docs)
+## Official Documentation
+ For more details and advanced configurations, refer to the [Official HashiCorp Vault Documentation](https://developer.hashicorp.com/vault/docs)
 
