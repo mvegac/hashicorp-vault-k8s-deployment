@@ -9,10 +9,10 @@ sudo apt-get install jq
 ## Namespace Creation
 ```bash
 # Creating the 'vault' namespace to organize resources
-bashkubectl create namespace vault
+kubectl create namespace vault
 
 # Switching to the created namespace
-bashkubectl config set-context --current --namespace=vault
+kubectl config set-context --current --namespace=vault
 ```
 ## Helm Configuration
 ```bash
